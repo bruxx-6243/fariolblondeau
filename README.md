@@ -1,4 +1,4 @@
-## fariolblondeau.vercel.app
+## fariolblondeau
 
 A minimal, responsive, and accessible personal website built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
