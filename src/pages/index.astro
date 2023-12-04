@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+
+import AppLayout from "@/layouts/AppLayout.astro";
+import { cn } from "@/lib/utils";
+
+import { author } from "@/data/socials";
+import { technologies } from "@/data/technologies";
+
+import Skill from "@/components/Skill.astro";
+import authorImage from "@/content/images/author.jpg";
+
+const { name } = author;
+
+const titleStyle = "font-bold tracking-tight text-4xl";
+const FRONTEND =
+  "I build frontend tools and experiment with new web app technologies.";
+---
+
+<AppLayout title={name}>
+  <div class="container">
+    <div class="flex flex-col-reverse md:flex-row">
+      <div class="flex-1 space-y-8">
+        <div class="space-y-3">
+          <p class="text-lg">
+            <span
+              class="text-3xl sm:text-4xl inline-block animate-rotate-hand origin-[70%_70%]"
+              >👋🏾</span
+            >
+            <i>I'm_</i>
+          </p>
+
+          <h1 class={cn(titleStyle, "text-gradient w-fit inline-block")}>
+            {name}
+          </h1>
+
+          <p>
+            Graduate student 🎓 in computer science at the <a
+              href="http://ivanovo.ac.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visite the official website of Ivanovo State University"
+              class="text-blue-600 dark:text-blue-400 underline"
+              >University State of Ivanovo</a
+            > in Russia.
+          </p>
+
+          <p>
+            Welcome to my slice 🍕 of the internet! I'm a <span
+              class="font-playpen-sans underline"
+              aria-hidden="true"
+              title={FRONTEND}>Frontend Web Developer</span
+            > and I like creating beautiful and attractive websites.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-2xl font-semibold">Favorite technologies</h2>
+          <p>
+            I love exploring new libraries and JavaScript 💛 frameworks ⚛️. Here
+            is a list of technologies that I have worked with.
+          </p>
+        </div>
+
+        <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          {
+            technologies.map((tech) => (
+              <Skill text={tech.text} icon={tech.icon} />
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="flex-1 py-8 mr-8 sm:py-0 sm:m-0">
+        <div class="h-full flex justify-end md:justify-center z-[1]">
+          <div
+            class="relative w-44 h-44 aspect-square rounded-full overflow-hidden md:mt-16 ring-4 ring-blue-400 ring-offset-4 ring-offset-zinc-100 dark:ring-offset-zinc-900">
+            <Image
+              src={authorImage}
+              alt="Fariol Blondeau profile"
+              quality="high"
+              format="avif"
+              loading="eager"
+              class="w-full object-cover animate-fade"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</AppLayout>

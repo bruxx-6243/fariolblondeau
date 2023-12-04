@@ -1,0 +1,9 @@
+cover: "./marico.png"
+title: "Marico"
+description: "Own your audience so you don't loose them. We believe that social platforms are taking advantage of creators.We want to change that and help creators fight back."
+stack:
+  - "React"
+  - "TypeScript"
+  - "Tailwind"
+demo: "https://marico-brx.vercel.app/"
+source: "https://github.com/bruxx-6243/marico.git"

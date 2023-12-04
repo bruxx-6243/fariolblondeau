@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { Github } from "simple-icons-astro";
+import { Eye } from "lucide-astro";
+
+import Badge from "./Badge.astro";
+
+type Props = {
+  project: CollectionEntry<"project">;
+};
+
+const { project } = Astro.props;
+
+const { cover, processing, title, description, stack, demo, source } =
+  project.data;
+---
+
+<li
+  class="dark:bg-zinc-800 bg-white dark:text-zinc-400 text-zinc-500 gap-1 p-4 border dark:border-zinc-700/60 rounded-lg flex flex-col items-start justify-between space-y-3 group">
+  <div class="space-y-3">
+    <div class="w-full h-[250px] rounded-lg overflow-hidden">
+      <Image
+        src={cover}
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+      />
+    </div>
+
+    {processing && <Badge />}
+    <h2
+      class="text-xl font-medium dark:text-white text-zinc-700 [word-break:break-word]">
+      {title}
+    </h2>
+
+    <p class="text-sm text-left leading-relaxed">{description}</p>
+
+    <ul class="flex flex-wrap gap-2">
+      {
+        stack.map((item: any) => (
+          <li class="dark:bg-zinc-700 bg-zinc-100 text-zinc-600 dark:text-zinc-300 rounded-md px-2 py-1 text-sm">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="w-full flex justify-between">
+    <a
+      href={demo}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center space-x-2 px-2 py-1 border rounded-lg dark:border-zinc-700/60 dark:hover:bg-zinc-700/25 hover:bg-zinc-200/30 transition-all">
+      <Eye class="h-[1.2rem] w-[1.2rem]" />
+      <span class="hidden md:inline">Preview</span>
+    </a>
+    <a
+      href={source}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center space-x-2 px-2 py-1 border rounded-lg dark:border-zinc-700/60 dark:hover:bg-zinc-700/25 hover:bg-zinc-200/30 transition-all">
+      <Github class="h-[1.2rem] w-[1.2rem]" />
+      <span class="hidden md:inline">Source Code</span>
+    </a>
+  </div>
+</li>

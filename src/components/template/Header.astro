@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import { ArrowDownRight, File } from "lucide-astro";
+
+import NavLink from "@/components/NavLink.astro";
+import navLinks from "@/data/navigation.json";
+
+import HashCodeLogo from "@/content/images/hashcode-logo2.png";
+import { MobileNav } from "@/components/MoblieNav";
+---
+
+<header class="py-4 sm:fixed w-full z-50">
+  <nav
+    class="container sm:dark:bg-zinc-800 flex items-center justify-between sm:border sm:dark:border-zinc-700 sm:rounded-lg sm:mt-4">
+    <a href="/">
+      <Image
+        src={HashCodeLogo}
+        alt="HashCode logo"
+        class="aspect-square w-7 h-7"
+        quality="high"
+        format="webp"
+      />
+    </a>
+    <div class="flex items-center gap-x-4">
+      <ul class="hidden sm:flex items-center gap-x-2">
+        {
+          navLinks.map((link) => (
+            <li class="relative text-base">
+              <NavLink href={link.href} text={link.text} />
+              {link.external && (
+                <p class="absolute top-0 -right-1 -rotate-90">
+                  <ArrowDownRight className="w-4" />
+                </p>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <a
+        href="/resume_fallback.pdf"
+        target="_blank"
+        rel="noreferrer noopener"
+        title="view my Resume"
+        aria-label="View Resume">
+        <File class="h-5 w-5" />
+      </a>
+
+      <MobileNav client:load />
+    </div>
+  </nav>
+</header>

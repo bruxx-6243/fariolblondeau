@@ -1,0 +1,27 @@
+[
+  {
+    "href": "/",
+    "text": "Home",
+    "external": false
+  },
+  {
+    "href": "/projects/",
+    "text": "Projects",
+    "external": false
+  },
+
+  {
+    "href": "https://www.linkedin.com/in/fariolblondeau",
+    "rel": "noopener noreferrer",
+    "target": "_blank",
+    "text": "LinkedIn",
+    "external": true
+  },
+  {
+    "href": "https://github.com/bruxx-6243",
+    "target": "_blank",
+    "rel": "noopener noreferrer",
+    "text": "GitHub",
+    "external": true
+  }
+]

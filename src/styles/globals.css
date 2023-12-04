@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f4f4f5;
+    --foreground: #09090b;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply bg-[#18181b] text-[#e4e4e7];
+    }
+  }
+
+  p {
+    @apply text-base md:text-lg text-zinc-600 dark:text-zinc-400;
+  }
+
+  ::selection {
+    @apply bg-blue-600 text-zinc-100;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-600;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-600/75;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply w-fit text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400;
+  }
+}

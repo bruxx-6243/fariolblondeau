@@ -1,0 +1,50 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+import BaseHead from "@/components/template/BaseHead.astro";
+import Header from "@/components/template/Header.astro";
+import "@/styles/globals.css";
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead {title} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+      const theme =
+        localStorage.getItem("theme") ??
+        (defaultTheme.matches ? "dark" : "light");
+
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      window.localStorage.setItem("theme", theme);
+    </script>
+
+    <ViewTransitions />
+  </head>
+
+  <body class="antialiased mx-auto font-poppins">
+    <Header />
+    <main class="sm:pt-28 pt-10 pb-10">
+      <slot />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+cover: "./skillbridge.png"
+processing: true
+title: "Skill Bridge"
+description: "We offer a wide range of online courses designed to equip learners with the skills and knowledge needed to succeed in the ever-evolving digital landscape."
+stack:
+  - "Next.JS"
+  - "NextAuth"
+  - "Prisma"
+  - "PostgreSQL"
+demo: "https://marico-brx.vercel.app/"
+source: "https://github.com/bruxx-6243/marico.git"
