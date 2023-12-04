@@ -2,7 +2,7 @@
 
 A minimal, responsive, and accessible personal website built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-![screen](./public//static/screen.png)
+![Overviw](https://github.com/bruxx-6243/fariolblondeau/assets/81830567/f9bb5785-6aec-441b-9c45-44c2bbb9cd7d)
 
 ## Tech stack
 
