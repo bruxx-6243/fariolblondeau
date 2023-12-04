@@ -2,10 +2,13 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
+import sitemap from "@astrojs/sitemap";
 
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://fariolblondeau.vercel.app/",
   integrations: [
     react(),
     tailwind(),
@@ -13,6 +16,12 @@ export default defineConfig({
       imgAttributes: {
         decoding: "async",
         loading: "lazy",
+      },
+    }),
+    sitemap(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
       },
     }),
   ],

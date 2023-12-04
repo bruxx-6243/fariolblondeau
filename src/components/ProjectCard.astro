@@ -14,6 +14,9 @@ const { project } = Astro.props;
 
 const { cover, processing, title, description, stack, demo, source } =
   project.data;
+
+const demo_url = new URL(demo, Astro.url).href;
+const source_url = new URL(source, Astro.url).href;
 ---
 
 <li
@@ -48,7 +51,7 @@ const { cover, processing, title, description, stack, demo, source } =
 
   <div class="w-full flex justify-between">
     <a
-      href={demo}
+      href={demo_url}
       target="_blank"
       rel="noopener noreferrer"
       class="inline-flex items-center space-x-2 px-2 py-1 border rounded-lg dark:border-zinc-700/60 dark:hover:bg-zinc-700/25 hover:bg-zinc-200/30 transition-all">
@@ -56,7 +59,7 @@ const { cover, processing, title, description, stack, demo, source } =
       <span class="hidden md:inline">Preview</span>
     </a>
     <a
-      href={source}
+      href={source_url}
       target="_blank"
       rel="noopener noreferrer"
       class="inline-flex items-center space-x-2 px-2 py-1 border rounded-lg dark:border-zinc-700/60 dark:hover:bg-zinc-700/25 hover:bg-zinc-200/30 transition-all">

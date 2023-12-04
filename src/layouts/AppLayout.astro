@@ -1,43 +1,43 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 
-import BaseHead from "@/components/template/BaseHead.astro";
-import Header from "@/components/template/Header.astro";
 import "@/styles/globals.css";
+
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
 
 type Props = {
   title: string;
 };
 
 const { title } = Astro.props;
+
+const GA_MEASUREMENT_ID = (import.meta.env.GOOGLE_TRACKING_ID = "G-H4XJXPNZQ5");
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead {title} />
+    <BaseHead title={title} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script is:inline>
-      const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-      const theme =
-        localStorage.getItem("theme") ??
-        (defaultTheme.matches ? "dark" : "light");
-
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
+    <script
+      type="text/partytown"
+      src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-
-      window.localStorage.setItem("theme", theme);
+      gtag("js", new Date());
+      gtag("config", GA_MEASUREMENT_ID);
     </script>
-
     <ViewTransitions />
   </head>
 
