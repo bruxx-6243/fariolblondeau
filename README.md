@@ -17,6 +17,7 @@ A minimal, responsive, and accessible personal website built with [Astro](https:
 - View Transition API
 - LIght / Dark Mode
 - SSG (Static Site Generation)
+- Google Analytics
 - and more ...
 
 ## Getting started
