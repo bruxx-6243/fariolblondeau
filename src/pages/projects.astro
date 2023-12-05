@@ -5,6 +5,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 import AppLayout from "@/layouts/AppLayout.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
+import { socials } from "@/data/constants";
 
 type Props = {
   project: CollectionEntry<"project">;
@@ -26,9 +27,42 @@ const TITLE = "Projects";
 <AppLayout title={TITLE}>
   <div class="container">
     <div>
-      <div class="space-y-6 text-center">
-        <h2 class="text-3xl font-semibold">Projects</h2>
-        <p>Here is a list of some latest projects that I have worked on.</p>
+      <div class="space-y-6 max-w-6xl">
+        <h2 class="text-3xl font-semibold">Welcome to My Portfolio 🤩</h2>
+        <p>
+          I create dynamic web apps using React, Tailwind, Astro, Next.js, and
+          Prisma ORM. My completed projects highlight seamless UIs and optimized
+          experiences, showcasing expertise in React and Next.js for top-notch
+          performance.
+        </p>
+        <p>
+          Currently, I'm developing innovative projects using React, Tailwind,
+          Astro, Next.js, and Prisma ORM. Stay tuned for groundbreaking
+          solutions at the intersection of technology and creativity 🎇.
+        </p>
+      </div>
+
+      <div class="space-y-2 mt-8">
+        <p class="italic max-w-2xl">
+          ✅ If my projects caught your interest ❤️‍🔥, let's connect! Reach out to
+          me on various social networks, I'm available on :
+        </p>
+        <ul class="flex flex-wrap max-w-md mx-auto sm:mx-0 gap-4">
+          {
+            socials.map(({ name, icon: Icon, url }) => (
+              <li class=" bg-blue-400/30 border border-blue-400 rounded-md px-2 py-1 text-sm cursor-pointer">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2">
+                  <Icon class="w-4 h-4" />
+                  {name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
 
       <ul class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8">

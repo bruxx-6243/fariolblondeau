@@ -1,0 +1,10 @@
+cover: "./fashion.png"
+processing: true
+title: "Fashion Magazine"
+description: "Fashion is an online store for selling woman clothing. We believe that social platforms are taking advantage of creators. We want to change that and help creators fight back."
+stack:
+  - "Astro"
+  - "TypeScript"
+  - "Tailwind"
+demo: "https://shopping-website-brx.netlify.app/"
+source: "https://github.com/bruxx-6243/shopping-website"

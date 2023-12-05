@@ -4,6 +4,7 @@ description: "Own your audience so you don't loose them. We believe that social 
 stack:
   - "React"
   - "TypeScript"
+  - "React Router Dom"
   - "Tailwind"
 demo: "https://marico-brx.vercel.app/"
-source: "https://github.com/bruxx-6243/marico.git"
+source: "https://github.com/bruxx-6243/marico"

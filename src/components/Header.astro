@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { ArrowDownRight, File } from "lucide-astro";
+import { ArrowDownRight, FileText } from "lucide-astro";
 
 import NavLink from "@/components/NavLink.astro";
 import navLinks from "@/data/navigation.json";
@@ -11,7 +11,7 @@ import { MobileNav } from "@/components/MoblieNav";
 
 <header class="py-4 sm:fixed w-full z-50">
   <nav
-    class="container sm:dark:bg-zinc-800 flex items-center justify-between sm:border sm:dark:border-zinc-700 sm:rounded-lg sm:mt-4">
+    class="container sm:bg-zinc-200/75 sm:dark:bg-zinc-800/75 flex items-center justify-between sm:border sm:dark:border-zinc-700 sm:rounded-lg sm:mt-4">
     <a href="/">
       <Image
         src={HashCodeLogo}
@@ -42,7 +42,7 @@ import { MobileNav } from "@/components/MoblieNav";
         rel="noreferrer noopener"
         title="view my Resume"
         aria-label="View Resume">
-        <File class="h-5 w-5" />
+        <FileText class="h-5 w-5" />
       </a>
 
       <MobileNav client:load />

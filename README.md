@@ -2,7 +2,7 @@
 
 A minimal, responsive, and accessible personal website built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-![Overviw](https://github.com/bruxx-6243/fariolblondeau/assets/81830567/f9bb5785-6aec-441b-9c45-44c2bbb9cd7d)
+![Overviw]("./../public/static/screenshot.png)
 
 ## Tech stack
 
@@ -10,6 +10,14 @@ A minimal, responsive, and accessible personal website built with [Astro](https:
 - **Frontend Library**: [React.js](https://react.dev/)
 - **Deployment**: [Vercel](https://www.netlify.com/)
 - **Package manager**: [yarn](https://pnpm.io/)
+
+## Features
+
+- Content Collection API
+- View Transition API
+- LIght / Dark Mode
+- SSG (Static Site Generation)
+- and more ...
 
 ## Getting started
 

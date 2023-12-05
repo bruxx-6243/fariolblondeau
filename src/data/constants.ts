@@ -1,3 +1,5 @@
+import { Github, Linkedin, Twitter } from "simple-icons-astro";
+
 export const Author = {
   name: "Fariol Blondeau",
   twitter: "bryan_6243",
@@ -16,3 +18,23 @@ export const defaultMedtaData = {
 
   twitter: Author.twitter,
 };
+
+export const socials = [
+  {
+    name: "Github",
+    icon: Github,
+    url: `https://github.com/${Author.github}`,
+  },
+  {
+    name: "Twitter",
+    icon: Twitter,
+    url: `https://twitter.com/${Author.twitter}`,
+  },
+  {
+    name: "linkedin",
+    icon: Linkedin,
+    url: `https://www.linkedin.com/in/${Author.name
+      .replace(/\s+/g, "")
+      .toLowerCase()}`,
+  },
+];

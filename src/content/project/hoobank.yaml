@@ -1,0 +1,9 @@
+cover: "./hoobank.png"
+title: "HooBank"
+description: "The Next Generation Payment Method. Our team of experts uses a methodology to identify the credit cards most likely to fit your needs. We examine annual percentage rates, annual fees."
+stack:
+  - "React/Vite"
+  - "JavaScript"
+  - "Tailwind"
+demo: "https://hoobank-site.netlify.app/"
+source: "https://github.com/bruxx-6243/hoobank"

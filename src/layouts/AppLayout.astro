@@ -27,9 +27,12 @@ const GA_MEASUREMENT_ID = (import.meta.env.GOOGLE_TRACKING_ID = "G-H4XJXPNZQ5");
     />
 
     <script
+      define:vars={{ GA_MEASUREMENT_ID }}
       type="text/partytown"
       src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-    ></script>
+    >
+      console.log("GA_MEASUREMENT_ID", GA_MEASUREMENT_ID);
+    </script>
     <script type="text/partytown" define:vars={{ GA_MEASUREMENT_ID }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -43,7 +46,7 @@ const GA_MEASUREMENT_ID = (import.meta.env.GOOGLE_TRACKING_ID = "G-H4XJXPNZQ5");
 
   <body class="antialiased mx-auto font-poppins">
     <Header />
-    <main class="sm:pt-28 pt-10 pb-10">
+    <main class="sm:pt-32 pt-10 pb-10">
       <slot />
     </main>
   </body>
