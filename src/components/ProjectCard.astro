@@ -22,11 +22,11 @@ const source_url = new URL(source, Astro.url).href;
 <li
   class="dark:bg-zinc-800 bg-white dark:text-zinc-400 text-zinc-500 gap-1 p-4 border dark:border-zinc-700/60 rounded-lg flex flex-col items-start justify-between space-y-3 group">
   <div class="space-y-3">
-    <div class="w-full h-[217px] rounded-lg overflow-hidden">
+    <div class="w-full sm:h-[217px] rounded-lg overflow-hidden">
       <Image
         src={cover}
         alt={title}
-        class="w-full h-full object-cover sm:group-hover:scale-105 transition-all duration-300"
+        class="w-full h-full object-cover md:group-hover:scale-105 transition-all duration-300"
       />
     </div>
 
