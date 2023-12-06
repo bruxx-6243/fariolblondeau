@@ -7,17 +7,18 @@
     --background: #f4f4f5;
     --foreground: #09090b;
   }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #18181b;
+      --foreground: #e4e4e7;
+    }
+  }
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      @apply bg-[#18181b] text-[#e4e4e7];
-    }
   }
 
   p {
