@@ -30,10 +30,11 @@ const GA_MEASUREMENT_ID = (import.meta.env.GOOGLE_TRACKING_ID = "G-H4XJXPNZQ5");
       define:vars={{ GA_MEASUREMENT_ID }}
       type="text/partytown"
       src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+      defer
     >
       console.log("GA_MEASUREMENT_ID", GA_MEASUREMENT_ID);
     </script>
-    <script type="text/partytown" define:vars={{ GA_MEASUREMENT_ID }}>
+    <script type="text/partytown" define:vars={{ GA_MEASUREMENT_ID }} defer>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
