@@ -14,7 +14,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 if (Astro.props.ogImage === undefined) {
-  Astro.props.ogImage = new URL(openGraph.image, canonicalURL);
+  Astro.props.ogImage = new URL(openGraph.image.src, canonicalURL);
 }
 
 const {
@@ -45,16 +45,13 @@ const {
         type: "image/svg+xml",
         href: `${Astro.site}favicon.svg`,
       },
-      { rel: "canonical", href: String(canonicalURL) },
       { rel: "sitemap", href: "/sitemap-index.xml" },
     ],
 
     meta: [
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        name: "twitter:image",
-        content: String(ogImage),
-      },
+
+      { name: "twitter:image", content: String(ogImage) },
       { name: "twitter:title", content: openGraph.title },
       { name: "twitter:description", content: defaultMedtaData.description },
       { name: "twitter:creator", content: defaultMedtaData.twitter },
@@ -62,10 +59,11 @@ const {
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:url", content: String(canonicalURL) },
 
-      { name: "robots", content: "index, follow" },
-      { name: "googlebot", content: "index, follow" },
       { name: "author", content: defaultMedtaData.title },
       { name: "generator", content: Astro.generator },
+
+      { name: "robots", content: "index, follow" },
+      { name: "googlebot", content: "index, follow" },
     ],
   }}
 />

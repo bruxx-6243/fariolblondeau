@@ -8,12 +8,15 @@ export const Author = {
 
 export const defaultMedtaData = {
   title: Author.name,
-  description: `My name is ${Author.name} I'm a Frontend Web developer and this my personal website. and soon I'll start sharing some contents about developement. And my goal is to become a better developer 🚀`,
+  description: `Welcome to my personal website, my name is ${Author.name} and I'm a software developer. `,
 
   openGraph: {
     title: `${Author.name} | Personal Website`,
     type: "website",
-    image: "/static/og-image.png",
+    image: {
+      src: "/static/og-image.png",
+      alt: `Photo of ${Author.name} with yellow hoodie`,
+    },
   },
 
   twitter: Author.twitter,
