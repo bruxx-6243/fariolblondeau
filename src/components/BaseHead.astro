@@ -5,19 +5,33 @@ import { defaultMedtaData } from "@/data/constants";
 
 const { openGraph } = defaultMedtaData;
 
-const { title } = Astro.props;
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  ogImage?: URL | undefined;
+}
 
-const canonicalURL = new URL(Astro.url).href;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+if (Astro.props.ogImage === undefined) {
+  Astro.props.ogImage = new URL(openGraph.image, canonicalURL);
+}
+
+const {
+  title = openGraph.title,
+  description = defaultMedtaData.description,
+  ogImage,
+} = Astro.props;
 ---
 
 <SEO
   title={title}
-  description={defaultMedtaData.description}
+  description={description}
   openGraph={{
     basic: {
       title: openGraph.title,
       type: openGraph.type,
-      image: openGraph.image,
+      image: String(ogImage),
       url: canonicalURL,
     },
   }}
@@ -26,8 +40,12 @@ const canonicalURL = new URL(Astro.url).href;
   }}
   extend={{
     link: [
-      { rel: "icon", href: "/favicon.svg" },
-      { rel: "canonical", href: canonicalURL },
+      {
+        rel: "shortcut icon",
+        type: "image/svg+xml",
+        href: `${Astro.site}favicon.svg`,
+      },
+      { rel: "canonical", href: String(canonicalURL) },
       { rel: "sitemap", href: "/sitemap-index.xml" },
     ],
 
@@ -35,18 +53,19 @@ const canonicalURL = new URL(Astro.url).href;
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "twitter:image",
-        content: openGraph.image,
+        content: String(ogImage),
       },
       { name: "twitter:title", content: openGraph.title },
       { name: "twitter:description", content: defaultMedtaData.description },
       { name: "twitter:creator", content: defaultMedtaData.twitter },
       { name: "twitter:site", content: defaultMedtaData.twitter },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:url", content: canonicalURL },
+      { name: "twitter:url", content: String(canonicalURL) },
 
       { name: "robots", content: "index, follow" },
+      { name: "googlebot", content: "index, follow" },
       { name: "author", content: defaultMedtaData.title },
-      { name: "generator", content: "Astro" },
+      { name: "generator", content: Astro.generator },
     ],
   }}
 />

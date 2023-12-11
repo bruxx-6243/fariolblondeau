@@ -1,54 +1,52 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 
+import "@fontsource/poppins";
 import "@/styles/globals.css";
 
 import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 
-type Props = {
-  title: string;
-};
+const { title, ogImage, description, ...props } = Astro.props;
 
-const { title } = Astro.props;
-
-const GA_MEASUREMENT_ID = (import.meta.env.GOOGLE_TRACKING_ID = "G-H4XJXPNZQ5");
+const GA_MEASUREMENT_ID = import.meta.env.GOOGLE_TRACKING_ID || "G-H4XJXPNZQ5";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
+    <BaseHead
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      {...props}
     />
+    <ViewTransitions />
+  </head>
+
+  <body class="antialiased mx-auto font-poppins">
+    <Header />
+
+    <main class="pt-32 pb-10">
+      <slot />
+    </main>
 
     <script
       define:vars={{ GA_MEASUREMENT_ID }}
       type="text/partytown"
       src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-      defer
     >
       console.log("GA_MEASUREMENT_ID", GA_MEASUREMENT_ID);
     </script>
-    <script type="text/partytown" define:vars={{ GA_MEASUREMENT_ID }} defer>
+    <script type="text/partytown" define:vars={{ GA_MEASUREMENT_ID }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
       gtag("config", GA_MEASUREMENT_ID);
-    </script>
-    <ViewTransitions />
-  </head>
 
-  <body class="antialiased mx-auto font-poppins">
-    <Header />
-    <main class="pt-32 pb-10">
-      <slot />
-    </main>
+      console.log("GA_MEASUREMENT_ID", GA_MEASUREMENT_ID);
+    </script>
   </body>
 </html>

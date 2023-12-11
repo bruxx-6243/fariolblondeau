@@ -5,30 +5,36 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 import AppLayout from "@/layouts/AppLayout.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
-import { socials } from "@/data/constants";
+import { Author, socials } from "@/data/constants";
 
 type Props = {
   project: CollectionEntry<"project">;
 };
 
-const projects = (await getCollection("project")).sort((a, b) => {
-  if (a.data.processing === true && b.data.processing !== true) {
-    return -1;
-  } else if (a.data.processing !== true && b.data.processing === true) {
-    return 1;
-  } else {
-    return 0;
-  }
-});
+// const projects = (await getCollection("project")).sort((a, b) => {
+//   if (a.data.processing === true && b.data.processing !== true) {
+//     return -1;
+//   } else if (a.data.processing !== true && b.data.processing === true) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// });
 
-const TITLE = "Projects";
+const response = await fetch(`/api/projects.json`);
+
+const projects = await response.json();
+
+const TITLE = `${Author.name} | Projects`;
 ---
 
 <AppLayout title={TITLE}>
   <div class="container">
     <div>
       <div class="space-y-6 max-w-6xl">
-        <h2 class="text-3xl font-semibold">Welcome <br class="block sm:hidden" /> to My Portfolio 🤩</h2>
+        <h2 class="text-3xl font-semibold">
+          Welcome <br class="block sm:hidden" /> to My Portfolio 🤩
+        </h2>
         <p>
           I create dynamic web apps using React, Tailwind, Astro, Next.js, and
           Prisma ORM. My completed projects highlight seamless UIs and optimized

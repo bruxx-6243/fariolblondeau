@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -16,8 +18,7 @@ module.exports = {
       },
 
       fontFamily: {
-        "playpen-sans": ["'Playpen Sans'", "sans-serif"],
-        poppins: ["'Poppins'", "sans-serif"],
+        poppins: ["'Poppins'", "Inter", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {

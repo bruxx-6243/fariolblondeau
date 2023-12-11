@@ -11,7 +11,7 @@ import { MobileNav } from "@/components/MoblieNav";
 
 <header class="p-4 fixed w-full z-50">
   <nav
-    class="container bg-zinc-200/75 dark:bg-zinc-800/75 flex items-center justify-between border dark:border-zinc-700 rounded-lg sm:mt-4 py-2 md:py-1">
+    class="container flex items-center justify-between rounded-lg sm:mt-4 py-2 md:py-1">
     <a href="/">
       <Image
         src={HashCodeLogo}
@@ -49,3 +49,11 @@ import { MobileNav } from "@/components/MoblieNav";
     </div>
   </nav>
 </header>
+
+<style>
+  nav {
+    @apply bg-zinc-200/30 dark:bg-zinc-800/30 border  dark:border-zinc-600/50 shadow-md;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+</style>
