@@ -11,7 +11,7 @@ export const defaultMedtaData = {
   description: `Welcome to my personal website, my name is ${Author.name} and I'm a software developer. `,
 
   openGraph: {
-    title: `${Author.name} | Personal Website`,
+    title: Author.name,
     type: "website",
     image: {
       src: "/static/og-image.png",
