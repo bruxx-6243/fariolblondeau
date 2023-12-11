@@ -13,7 +13,7 @@ export const defaultMedtaData = {
   openGraph: {
     title: `${Author.name} | Personal Website`,
     type: "website",
-    image: "/og-image.png",
+    image: "/static/og-image.png",
   },
 
   twitter: Author.twitter,

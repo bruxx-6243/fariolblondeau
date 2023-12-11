@@ -6,9 +6,9 @@ import { defaultMedtaData } from "@/data/constants";
 const { openGraph } = defaultMedtaData;
 
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  ogImage?: URL | undefined;
+  title?: string;
+  description?: string;
+  ogImage?: URL;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
