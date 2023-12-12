@@ -9,7 +9,7 @@ import Header from "@/components/Header.astro";
 
 const { title, ogImage, description, ...props } = Astro.props;
 
-const GA_MEASUREMENT_ID = import.meta.env.GOOGLE_TRACKING_ID || "G-H4XJXPNZQ5";
+const GA_TRACKING_ID = import.meta.env.GOOGLE_TRACKING_ID ?? "G-H4XJXPNZQ5";
 ---
 
 <!doctype html>
@@ -32,21 +32,15 @@ const GA_MEASUREMENT_ID = import.meta.env.GOOGLE_TRACKING_ID || "G-H4XJXPNZQ5";
     </main>
 
     <script
-      define:vars={{ GA_MEASUREMENT_ID }}
       type="text/partytown"
-      src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-    >
-      console.log("GA_MEASUREMENT_ID", GA_MEASUREMENT_ID);
-    </script>
-    <script type="text/partytown" define:vars={{ GA_MEASUREMENT_ID }}>
+      src="https://www.googletagmanager.com/gtag/js?id=G-H4XJXPNZQ5"></script>
+    <script type="text/partytown" define:vars={{ GA_TRACKING_ID }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", GA_MEASUREMENT_ID);
-
-      console.log("GA_MEASUREMENT_ID", GA_MEASUREMENT_ID);
+      gtag("config", GA_TRACKING_ID);
     </script>
   </body>
 </html>
