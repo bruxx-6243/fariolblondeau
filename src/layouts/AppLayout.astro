@@ -12,9 +12,9 @@ const { title, ogImage, description, ...props } = Astro.props;
 const GA_TRACKING_ID = import.meta.env.GOOGLE_TRACKING_ID ?? "G-H4XJXPNZQ5";
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <BaseHead
       title={title}
       description={description}
@@ -30,7 +30,6 @@ const GA_TRACKING_ID = import.meta.env.GOOGLE_TRACKING_ID ?? "G-H4XJXPNZQ5";
     <main class="pt-32 pb-10">
       <slot />
     </main>
-
     <script
       type="text/partytown"
       src="https://www.googletagmanager.com/gtag/js?id=G-H4XJXPNZQ5"></script>
