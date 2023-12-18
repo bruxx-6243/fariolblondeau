@@ -38,6 +38,4 @@ yarn dev
 
 LICENSE: [MIT](https://github.com/bruxx-6243/fariol-blondeau-resume/blob/main/LICENSE)
 
-- Inspired by [Kevin Zuniga Cuellar](https://github.com/kevinzunigacuellar/web) portfolio
-
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
