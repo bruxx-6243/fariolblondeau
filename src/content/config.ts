@@ -7,6 +7,7 @@ export const collections = {
       z.object({
         cover: image(),
         processing: z.boolean().default(false).optional(),
+        trash: z.boolean().default(false).optional(),
         title: z.string().min(5, { message: "Must be 5 characters least" }),
         description: z
           .string()

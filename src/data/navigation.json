@@ -5,11 +5,15 @@
     "external": false
   },
   {
-    "href": "/projects/",
+    "href": "/projects",
     "text": "Projects",
     "external": false
   },
-
+  {
+    "href": "/blog",
+    "text": "Blog",
+    "external": false
+  },
   {
     "href": "https://www.linkedin.com/in/fariolblondeau",
     "rel": "noopener noreferrer",
