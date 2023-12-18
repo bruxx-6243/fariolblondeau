@@ -1,0 +1,25 @@
+---
+import { Author } from "@/data/constants";
+import AppLayout from "@/layouts/AppLayout.astro";
+
+const TITLE = `Blog | ${Author.name}`;
+const DESCRIPTION =
+  "Explore my curated collection of code snippets, guides, & discoveries fueling web development journeys.";
+---
+
+<AppLayout title={TITLE} description={DESCRIPTION}>
+  <div class="container">
+    <h2 class="text-3xl font-semibold">Blog 📝</h2>
+    <div class="space-y-4 mt-8 max-w-screen-lg">
+      <p>
+        Welcome to your hub of web dev magic! Explore curated code snippets,
+        guides & tutorials—an arsenal for crafting stunning digital experiences.
+      </p>
+      <p>
+        Embark on a coding adventure! Find handpicked snippets, guides &
+        discoveries here, fueling your web dev journey with insights &
+        innovation.
+      </p>
+    </div>
+  </div>
+</AppLayout>
