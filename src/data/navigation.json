@@ -1,13 +1,11 @@
 [
   {
     "href": "/",
-    "text": "Home",
-    "external": false
+    "text": "Home"
   },
   {
     "href": "/projects/",
-    "text": "Projects",
-    "external": false
+    "text": "Projects"
   },
 
   {

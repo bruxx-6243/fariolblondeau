@@ -26,7 +26,7 @@ export const socials = [
   {
     name: "Github",
     icon: Github,
-    url: `https://github.com/${Author.github}`,
+    url: `https://github.com/${Author.github}/${Author.github}/issues/1#issue-2046927702`,
   },
   {
     name: "Twitter",
