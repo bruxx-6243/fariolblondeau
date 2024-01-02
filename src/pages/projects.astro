@@ -7,7 +7,7 @@ import { Author, socials } from "@/data/constants";
 
 type ProjectProps = CollectionEntry<"project">;
 
-const projects = (await getCollection("project"))
+const projects: ProjectProps[] = (await getCollection("project"))
   .filter((project) => !project.data.trash)
   .sort((a, b) => {
     if (a.data.processing === true && b.data.processing !== true) {
@@ -17,7 +17,7 @@ const projects = (await getCollection("project"))
     } else {
       return 0;
     }
-  }) as ProjectProps[];
+  });
 
 const TITLE = `Projects | ${Author.name}`;
 ---
