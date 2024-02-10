@@ -3,7 +3,6 @@
 
 interface ImportMetaEnv {
   readonly GOOGLE_TRACKING_ID: string;
-  // more env variables...
 }
 
 interface ImportMeta {
