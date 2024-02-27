@@ -1,0 +1,10 @@
+cover: "./robbie-lens.png"
+title: "Robbie Lens"
+description: "Robbie Lens is a portfolio website for photographie that is showing case of projects, in this project I used TypeScript and Google App Script to store the inputs intries to the GoogleSheet."
+stack:
+  - "TypeScript"
+  - "SCSS"
+  - "GoogleSheet API"
+  - "Google App Script"
+demo: "https://brx-hashcode-robbie-lens.netlify.app/"
+source: "https://github.com/PossaCode-Community/Fariol-Blondeau_Robbie-Lens"
