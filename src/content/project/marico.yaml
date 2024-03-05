@@ -1,6 +1,6 @@
 cover: "./marico.png"
 title: "Marico"
-description: "Own your audience so you don't loose them. We believe that social platforms are taking advantage of creators.We want to change that and help creators fight back."
+description: "Marico is a platform that allows users to build an online audience and promote their content by increasing their visibility. This project uses yup to validate registration and login forms. It also utilizes react-router-dom to facilitate navigation between pages and protect routes for non-connected users."
 stack:
   - "React"
   - "TypeScript"

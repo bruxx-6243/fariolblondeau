@@ -1,5 +1,4 @@
 cover: "./youmeal.png"
-processing: true
 title: "YouMeal"
 description: "YouMeal is an online fast food delivery service. In where to can order fast food, such as Pizza, Burgers, and so on."
 stack:
