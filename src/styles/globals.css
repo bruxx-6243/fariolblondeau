@@ -26,7 +26,7 @@
   }
 
   ::selection {
-    @apply bg-blue-600 text-zinc-100;
+    @apply bg-teal-700 text-zinc-100;
   }
 
   ::-webkit-scrollbar {
