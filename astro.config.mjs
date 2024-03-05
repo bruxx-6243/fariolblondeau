@@ -1,9 +1,10 @@
 import { defineConfig } from "astro/config";
+
+import partytown from "@astrojs/partytown";
+
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import partytown from "@astrojs/partytown";
-
 import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
