@@ -1,0 +1,25 @@
+---
+import AppLayout from "@/layouts/AppLayout.astro";
+
+import { Author } from "@/data/constants";
+---
+
+<AppLayout title={`😵‍💫 - 404 | ${Author.name}`}>
+  <div class="container">
+    <div
+      class="w-full flex flex-col items-center justify-center space-y-8 mt-40">
+      <div class="space-y-4 text-center">
+        <p class="text-9xl font-bold">
+          4<span aria-hidden="true" class="text-blue-400">0</span>4
+        </p>
+        <p>Page Not Found</p>
+      </div>
+      <a
+        href="/"
+        title="back to the home page"
+        class="py-2 px-4 bg-blue-400/20 border border-blue-400 text-zinc-100 rounded-lg"
+        >Back Home</a
+      >
+    </div>
+  </div>
+</AppLayout>
