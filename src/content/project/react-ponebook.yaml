@@ -1,5 +1,6 @@
 cover: "./react-phonebook.png"
 title: "React PhoneBook"
+trash: true
 description: "React PhoneBook is an application that allows users to register contacts in an address book. I use React for creating the user interface, Zod for form validation, Zustand for state management, and localStorage for storing contacts."
 stack:
   - "React"
