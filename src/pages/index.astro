@@ -9,6 +9,7 @@ import { technologies } from "@/data/technologies";
 
 import Skill from "@/components/Skill.astro";
 import ME from "@/content/images/author.jpg";
+import Akieni from "@/content/images/Akieni.png";
 
 const titleStyle = "font-bold tracking-tight text-4xl";
 const FRONTEND =
@@ -70,17 +71,44 @@ const FRONTEND =
       </div>
 
       <div class="flex-1 py-8 mr-8 sm:py-0 sm:m-0">
-        <div class="h-full flex justify-end md:justify-center z-[1]">
-          <div
-            class="relative w-44 h-44 size aspect-square rounded-full overflow-hidden md:mt-16 ring-4 ring-blue-400 ring-offset-4 ring-offset-zinc-100 dark:ring-offset-zinc-900">
-            <Image
-              src={ME}
-              alt={`${Author.name} avatar`}
-              quality="high"
-              format="webp"
-              loading="eager"
-              class="w-full object-cover animate-fade"
-            />
+        <div class="flex flex-col items-end sm:items-center space-y-12">
+          <div class="h-full flex justify-end md:justify-center z-[1]">
+            <div
+              class="relative w-44 h-44 size aspect-square rounded-full overflow-hidden md:mt-16 ring-4 ring-blue-400 ring-offset-4 ring-offset-zinc-100 dark:ring-offset-zinc-900">
+              <Image
+                src={ME}
+                alt={`${Author.name} avatar`}
+                quality="high"
+                format="webp"
+                loading="eager"
+                class="w-full object-cover animate-fade"
+              />
+            </div>
+          </div>
+
+          <div class="w-full max-w-[250px]">
+            <a
+              href="https://www.akieni.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Visite the official Akieni Website"
+              class="block w-full bg-zinc-200/30 p-2 rounded dark:bg-zinc-800/30 border dark:border-zinc-600/50 shadow-md">
+              <div class="flex items-center space-x-4">
+                <Image
+                  src={Akieni}
+                  alt="Logo de Akieni"
+                  quality="high"
+                  format="webp"
+                  loading="eager"
+                  class="w-8 aspect-square rounded object-cover"
+                />
+
+                <div>
+                  <h3 class="font-semibold text-sm">Akieni</h3>
+                  <p class="text-xs italic">Software Developer</p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
