@@ -4,10 +4,13 @@
     "text": "Home"
   },
   {
+    "href": "/blog/",
+    "text": "Blog"
+  },
+  {
     "href": "/projects/",
     "text": "Projects"
   },
-
   {
     "href": "https://www.linkedin.com/in/fariolblondeau",
     "rel": "noopener noreferrer",

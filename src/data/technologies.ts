@@ -5,8 +5,9 @@ import {
   Typescript,
   Tailwindcss,
   Nodedotjs,
-  Prisma,
+  // Prisma,
   Zod,
+  Adonisjs,
 } from "simple-icons-astro";
 
 type Technology = {
@@ -39,9 +40,13 @@ export const technologies: Technology[] = [
     text: "Zod",
     icon: Zod,
   },
+  // {
+  //   text: "Prisma",
+  //   icon: Prisma,
+  // },
   {
-    text: "Prisma",
-    icon: Prisma,
+    text: "Adonis.Js",
+    icon: Adonisjs,
   },
   {
     text: "Node.js",
