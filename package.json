@@ -40,6 +40,7 @@
     "astro-seo": "^0.8.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "framer-motion": "^11.11.17",
     "install": "^0.13.0",
     "lucide-astro": "^0.292.0",
     "lucide-react": "^0.284.0",
