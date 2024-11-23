@@ -19,21 +19,4 @@ export const collections = {
         source: z.string().url(),
       }),
   }),
-
-  blog: {
-    type: "content",
-    schema: () => {
-      z.object({
-        title: z
-          .string()
-          .min(6, { message: "The blog title must be alt least 6 characters" }),
-        description: z.string().min(10, {
-          message: "The blog descrition must be at least 10 charaters",
-        }),
-
-        createdAt: z.date().default(new Date()),
-        updatedAt: z.date().default(new Date()),
-      });
-    },
-  },
 };
