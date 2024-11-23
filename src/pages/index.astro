@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 
 import AppLayout from "@/layouts/AppLayout.astro";
-import { cn } from "@/lib/utils";
 
 import { Author } from "@/data/constants";
 import { technologies } from "@/data/technologies";
@@ -12,25 +11,23 @@ import ME from "@/content/images/author.jpg";
 
 import EntrepriseCard from "@/components/EntrepriseCard.astro";
 
-const titleStyle = "font-bold tracking-tight text-4xl";
-
 import Akieni from "@/content/images/Akieni.png";
-import FrontendMaster from "@/content/images/frontend-master.png"
+import FrontendMaster from "@/content/images/frontend-master.png";
 
 const entreprises = [
   {
     name: "Akieni",
     title: "Software Developer",
     link: "https://www.akieni.com/",
-    logo: Akieni
+    logo: Akieni,
   },
   {
     name: "Frontend Master",
     title: "Public Profile",
     link: "https://frontendmasters.com/u/bruxx_6243/",
-    logo: FrontendMaster
-  }
-]
+    logo: FrontendMaster,
+  },
+];
 ---
 
 <AppLayout title={Author.name}>
@@ -46,22 +43,26 @@ const entreprises = [
             <i>I'm_</i>
           </p>
 
-          <h1 class={cn(titleStyle, "text-gradient w-fit inline-block")}>
+          <h1
+            class="text-gradient font-semibold sm:font-black tracking-tight text-4xl w-fit inline-block">
             {Author.name}
           </h1>
 
           <p>Software Developer | Front-End Specialist 🎨</p>
 
           <p>
-           Welcome to my corner of the web. I&apos;m passionate about building user-friendly, visually appealing interfaces that bring ideas to life. Self-taught and always eager to learn, I thrive on creating seamless digital experiences.
+            Welcome to my corner of the web. I&apos;m passionate about building
+            user-friendly, visually appealing interfaces that bring ideas to
+            life. Self-taught and always eager to learn, I thrive on creating
+            seamless digital experiences.
           </p>
         </div>
 
         <div class="space-y-3">
           <h2 class="text-2xl font-semibold">Favorite technologies</h2>
           <p>
-            I love exploring new libraries and JavaScript frameworks  🪄. Here
-            is a list of technologies that I have worked with.
+            I love exploring new libraries and JavaScript frameworks 🪄. Here is
+            a list of technologies that I have worked with.
           </p>
         </div>
 
@@ -74,8 +75,8 @@ const entreprises = [
         </ul>
       </div>
 
-      <div class="flex-1 py-8 mr-8 sm:py-0 sm:m-0">
-        <div class="flex flex-col items-end sm:items-center space-y-12">
+      <div class="flex-1 py-8 sm:py-0 sm:m-0">
+        <div class="flex flex-col items-end md:items-center space-y-8">
           <div class="h-full flex justify-end md:justify-center z-[1]">
             <div
               class="relative w-44 h-44 size aspect-square rounded-full overflow-hidden md:mt-16 ring-4 ring-blue-400 ring-offset-4 ring-offset-zinc-100 dark:ring-offset-zinc-900">
@@ -90,10 +91,18 @@ const entreprises = [
             </div>
           </div>
 
-         <div class="space-y-2">
-          {entreprises.map((el, index) => <EntrepriseCard link={el.link} name={el.name} title={el.title} logo={el.logo}/> )}
-         </div>
-
+          <div class="space-y-2">
+            {
+              entreprises.map((el) => (
+                <EntrepriseCard
+                  link={el.link}
+                  name={el.name}
+                  title={el.title}
+                  logo={el.logo}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
