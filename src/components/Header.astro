@@ -18,7 +18,7 @@ import { MobileNav } from "@/components/MoblieNav";
       <Image
         src={HashCodeLogo}
         alt="HashCode logo"
-        class="aspect-square w-7 h-7"
+        class="aspect-square size-7"
         quality="high"
         format="webp"
       />
@@ -31,9 +31,9 @@ import { MobileNav } from "@/components/MoblieNav";
             <li class="relative text-base">
               <NavLink href={link.href} text={link.text} />
               {link.external && (
-                <p class="absolute top-0 -right-1 -rotate-90">
+                <span class="absolute top-0 -right-1 -rotate-90">
                   <ArrowDownRight className="w-4" />
-                </p>
+                </span>
               )}
             </li>
           ))
@@ -46,7 +46,7 @@ import { MobileNav } from "@/components/MoblieNav";
         rel="noreferrer noopener"
         title="view my Resume"
         aria-label="View Resume">
-        <FileText class="h-5 w-5" />
+        <FileText class="siz-5" />
       </a>
 
       <MobileNav client:load />

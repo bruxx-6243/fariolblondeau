@@ -1,0 +1,87 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import AppLayout from "@/layouts/AppLayout.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { Author, socials } from "@/data/constants";
+
+type ProjectProps = CollectionEntry<"project">;
+
+const projects: ProjectProps[] = (
+  await getCollection("project", ({ data }) => !data.trash)
+).sort((a, b) => {
+  if (a.data.processing === true && b.data.processing !== true) {
+    return -1;
+  } else if (a.data.processing !== true && b.data.processing === true) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+
+const TITLE = `Projects - ${Author.name}`;
+---
+
+<AppLayout title={TITLE}>
+  <div class="container">
+    <div>
+      <div class="space-y-6 max-w-6xl">
+        <h1 class="text-3xl font-semibold">
+          Welcome <br class="block sm:hidden" /> to My Portfolio 🤩
+        </h1>
+        <p>
+          I create dynamic web apps using React, Tailwind, Astro, Next.js, and
+          Drizzle ORM. My completed projects highlight seamless UIs and optimized
+          experiences, showcasing expertise in React and Next.js for top-notch
+          performance.
+        </p>
+        <p>
+          Currently, I'm developing innovative projects using React, Tailwind,
+          Astro, Next.js, and Drizzle ORM. Stay tuned for groundbreaking
+          solutions at the intersection of technology and creativity 🎇.
+        </p>
+
+        <p>
+          You can find all my projects on <a
+            href={`https://github.com/${Author.github}/?tab=repositories`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-400 underline"
+            title="Checkout my projects on Github">Github</a
+          >.
+        </p>
+      </div>
+
+      <div class="space-y-2 mt-8">
+        <p class="italic max-w-2xl">
+          ✅ If my projects caught your interest ❤️‍🔥, let's connect! Reach out to
+          me on various social networks, I'm available on :
+        </p>
+        <ul class="flex flex-wrap max-w-md mx-auto sm:mx-0 gap-4">
+          {
+            socials.map(({ name, icon: Icon, url }) => (
+              <li class=" bg-blue-400/30 border border-blue-400 rounded-md px-2 py-1 text-sm cursor-pointer">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2">
+                  <Icon class="w-4 h-4" />
+                  {name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <ul class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+        {
+          projects.map((project: ProjectProps) => {
+            return <ProjectCard project={project} />;
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</AppLayout>

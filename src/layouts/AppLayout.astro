@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import Analytics from "@vercel/analytics/astro";
 
 import "@fontsource/poppins";
 import "@/styles/globals.css";
@@ -8,8 +9,6 @@ import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 
 const { title, ogImage, description, ...props } = Astro.props;
-
-const GA_TRACKING_ID = import.meta.env.GOOGLE_TRACKING_ID ?? "G-H4XJXPNZQ5";
 ---
 
 <html lang="en">
@@ -21,26 +20,15 @@ const GA_TRACKING_ID = import.meta.env.GOOGLE_TRACKING_ID ?? "G-H4XJXPNZQ5";
       ogImage={ogImage}
       {...props}
     />
+    <Analytics />
     <ViewTransitions />
   </head>
 
-  <body class="antialiased mx-auto font-poppins">
+  <body class="antialiased font-poppins">
     <Header />
 
     <main class="pt-32 pb-10">
       <slot />
     </main>
-
-    <script
-      type="text/partytown"
-      src="https://www.googletagmanager.com/gtag/js?id=G-H4XJXPNZQ5"></script>
-    <script type="text/partytown" define:vars={{ GA_TRACKING_ID }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", GA_TRACKING_ID);
-    </script>
   </body>
 </html>

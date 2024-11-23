@@ -1,0 +1,34 @@
+---
+import AppLayout from "@/layouts/AppLayout.astro";
+import { Author } from "@/data/constants";
+
+const TITLE = `Blog - ${Author.name}`;
+---
+
+<AppLayout title={TITLE}>
+  <div class="container">
+    <div class="space-y-12 max-w-5xl">
+      <div class="space-y-2">
+        <h1 class="text-3xl font-semibold">
+          Explore <br class="block sm:hidden" /> My blog 🌟
+        </h1>
+        <p>
+          Explore my personal collection of code snippets, starter guides,
+          tutorials, and fascinating finds from the vast expanse of the
+          internet.
+        </p>
+      </div>
+
+      <div>
+        <div class="space-y-2 border-l-4 border-blue-400 pl-4">
+          <h3 class="text-lg font-semibold">My first post</h3>
+          <p class="text-base">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+            perferendis eligendi sit mollitia iste quibusdam maxime, tenetur ex
+            aliquid illum. Fugiat?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</AppLayout>
