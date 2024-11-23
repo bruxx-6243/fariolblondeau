@@ -5,7 +5,9 @@ import { ArrowDownRight, FileText } from "lucide-astro";
 import NavLink from "@/components/NavLink.astro";
 import navLinks from "@/data/navigation.json";
 
-import HashCodeLogo from "@/content/images/hashcode-logo2.png";
+import HashCodeLogo2 from "@/content/images/hashcode-logo2.png";
+import HashCodeLogo from "@/content/images/hashcode-logo.png";
+
 import { MobileNav } from "@/components/MoblieNav";
 ---
 
@@ -16,7 +18,7 @@ import { MobileNav } from "@/components/MoblieNav";
       <Image
         src={HashCodeLogo}
         alt="HashCode logo"
-        class="aspect-square w-7 h-7"
+        class="aspect-square size-7"
         quality="high"
         format="webp"
       />
@@ -29,22 +31,22 @@ import { MobileNav } from "@/components/MoblieNav";
             <li class="relative text-base">
               <NavLink href={link.href} text={link.text} />
               {link.external && (
-                <p class="absolute top-0 -right-1 -rotate-90">
+                <span class="absolute top-0 -right-1 -rotate-90">
                   <ArrowDownRight className="w-4" />
-                </p>
+                </span>
               )}
             </li>
           ))
         }
       </ul>
-      
+
       <a
         href="/static/CV_Fariol_Blondeau_Web_Developer.pdf"
         target="_blank"
         rel="noreferrer noopener"
         title="view my Resume"
         aria-label="View Resume">
-        <FileText class="h-5 w-5" />
+        <FileText class="siz-5" />
       </a>
 
       <MobileNav client:load />

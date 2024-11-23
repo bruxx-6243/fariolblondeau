@@ -1,0 +1,13 @@
+---
+import AppLayout from "@/layouts/AppLayout.astro";
+
+const { slug } = Astro.params;
+
+console.log(slug);
+---
+
+<AppLayout>
+  <div class="container">
+    <h1>{slug}</h1>
+  </div>
+</AppLayout>

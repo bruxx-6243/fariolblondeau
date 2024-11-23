@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fariolblondeau.vercel.app/sitemap-index.xml

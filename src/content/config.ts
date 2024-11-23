@@ -8,13 +8,32 @@ export const collections = {
         cover: image(),
         processing: z.boolean().default(false).optional(),
         trash: z.boolean().default(false).optional(),
-        title: z.string().min(5, { message: "Must be 5 characters least" }),
-        description: z
-          .string()
-          .min(20, { message: "Must be 20 characters at least" }),
+        title: z.string().min(5, {
+          message: "The project title must be at least 5 characters",
+        }),
+        description: z.string().min(20, {
+          message: "The project descruption must be at least 20 charaters",
+        }),
         stack: z.array(z.string()),
         demo: z.string().url(),
         source: z.string().url(),
       }),
   }),
+
+  blog: {
+    type: "content",
+    schema: () => {
+      z.object({
+        title: z
+          .string()
+          .min(6, { message: "The blog title must be alt least 6 characters" }),
+        description: z.string().min(10, {
+          message: "The blog descrition must be at least 10 charaters",
+        }),
+
+        createdAt: z.date().default(new Date()),
+        updatedAt: z.date().default(new Date()),
+      });
+    },
+  },
 };
