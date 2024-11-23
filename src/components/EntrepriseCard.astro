@@ -1,0 +1,38 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+type Props = {
+  name: string,
+  title: string,
+  link: string,
+  logo: ImageMetadata
+}
+
+const {name, title, logo, link} = Astro.props
+---
+   
+<div class="w-full max-w-[270px]">
+  <a
+    href={link}
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Visite the official Akieni Website"
+    class="block w-full bg-zinc-200/30 p-2 rounded dark:bg-zinc-800/30 border dark:border-zinc-600/50 shadow-md">
+    <div class="flex items-center space-x-4">
+      <Image
+        src={logo}
+        alt={`Logo de ${name}`}
+        quality="high"
+        format="webp"
+        loading="eager"
+        class="w-8 aspect-square rounded object-cover"
+      />
+
+      <div>
+        <h3 class="font-semibold text-sm">{name}</h3>
+        <p class="text-xs italic">{title}</p>
+      </div>
+    </div>
+  </a>
+</div>

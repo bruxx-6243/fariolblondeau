@@ -9,11 +9,28 @@ import { technologies } from "@/data/technologies";
 
 import Skill from "@/components/Skill.astro";
 import ME from "@/content/images/author.jpg";
-import Akieni from "@/content/images/Akieni.png";
+
+import EntrepriseCard from "@/components/EntrepriseCard.astro";
 
 const titleStyle = "font-bold tracking-tight text-4xl";
-const FRONTEND =
-  "I build frontend tools and experiment with new web app technologies.";
+
+import Akieni from "@/content/images/Akieni.png";
+import FrontendMaster from "@/content/images/frontend-master.png"
+
+const entreprises = [
+  {
+    name: "Akieni",
+    title: "Software Developer",
+    link: "https://www.akieni.com/",
+    logo: Akieni
+  },
+  {
+    name: "Frontend Master",
+    title: "Public Profile",
+    link: "https://frontendmasters.com/u/bruxx_6243/",
+    logo: FrontendMaster
+  }
+]
 ---
 
 <AppLayout title={Author.name}>
@@ -33,30 +50,17 @@ const FRONTEND =
             {Author.name}
           </h1>
 
-          <p>
-            Graduate student 🎓 in computer science at the <a
-              href="http://ivanovo.ac.ru/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visite the official website of Ivanovo State University"
-              class="text-blue-600 dark:text-blue-400 underline"
-              >University State of Ivanovo</a
-            > in Russia.
-          </p>
+          <p>Software Developer | Front-End Specialist 🎨</p>
 
           <p>
-            Welcome to my slice 🍕 of the internet. I'm a self-taught Software
-            Developer, primary focused on the <span
-              aria-hidden="true"
-              title={FRONTEND}>front-end</span
-            >.
+           Welcome to my corner of the web. I&apos;m passionate about building user-friendly, visually appealing interfaces that bring ideas to life. Self-taught and always eager to learn, I thrive on creating seamless digital experiences.
           </p>
         </div>
 
         <div class="space-y-3">
           <h2 class="text-2xl font-semibold">Favorite technologies</h2>
           <p>
-            I love exploring new libraries and JavaScript 💛 frameworks ⚛️. Here
+            I love exploring new libraries and JavaScript frameworks  🪄. Here
             is a list of technologies that I have worked with.
           </p>
         </div>
@@ -86,30 +90,10 @@ const FRONTEND =
             </div>
           </div>
 
-          <div class="w-full max-w-[250px]">
-            <a
-              href="https://www.akieni.com/"
-              rel="noopener noreferrer"
-              target="_blank"
-              title="Visite the official Akieni Website"
-              class="block w-full bg-zinc-200/30 p-2 rounded dark:bg-zinc-800/30 border dark:border-zinc-600/50 shadow-md">
-              <div class="flex items-center space-x-4">
-                <Image
-                  src={Akieni}
-                  alt="Logo de Akieni"
-                  quality="high"
-                  format="webp"
-                  loading="eager"
-                  class="w-8 aspect-square rounded object-cover"
-                />
+         <div class="space-y-2">
+          {entreprises.map((el, index) => <EntrepriseCard link={el.link} name={el.name} title={el.title} logo={el.logo}/> )}
+         </div>
 
-                <div>
-                  <h3 class="font-semibold text-sm">Akieni</h3>
-                  <p class="text-xs italic">Software Developer</p>
-                </div>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
     </div>
