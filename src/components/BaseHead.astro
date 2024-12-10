@@ -2,6 +2,8 @@
 import { SEO } from "astro-seo";
 
 import { defaultMedtaData } from "@/data/constants";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import HashCodeLogo from "@/content/images/hashcode-logo.png";
 
 const { openGraph } = defaultMedtaData;
 
@@ -42,8 +44,11 @@ const {
     link: [
       {
         rel: "shortcut icon",
-        type: "image/svg+xml",
         href: `${Astro.site}favicon.svg`,
+      },
+      {
+        rel: "apple-touch-icon",
+        href: HashCodeLogo.src,
       },
       { rel: "sitemap", href: "/sitemap-index.xml" },
     ],
@@ -52,6 +57,7 @@ const {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
 
       { name: "og:description", content: description },
+      { name: "og:site_name", content: title },
 
       { name: "twitter:image", content: String(ogImage) },
       { name: "twitter:title", content: openGraph.title },
@@ -73,3 +79,4 @@ const {
     ],
   }}
 />
+<SpeedInsights />

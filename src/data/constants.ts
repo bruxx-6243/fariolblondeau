@@ -8,7 +8,7 @@ export const Author = {
 
 export const defaultMedtaData = {
   title: Author.name,
-  description: `Welcome to my personal website, my name is ${Author.name} and I'm a software developer. `,
+  description: `Welcome to my personal website, my name is ${Author.name} and I'm a Software Developer. `,
 
   openGraph: {
     title: Author.name,
