@@ -15,5 +15,6 @@ const payload = {
 
 await sendEmail(payload);
 
+await new Promise((resolve) => setTimeout(resolve, 3000));
 return Astro.redirect("https://frontendmasters.com/u/bruxx_6243/");
 ---
