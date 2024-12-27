@@ -16,7 +16,7 @@ const { cover, processing, title, description, stack, demo, source } =
   project.data;
 
 const demo_url = new URL(demo, Astro.url).href;
-const source_url = new URL(source, Astro.url).href;
+const source_url = new URL(source!, Astro.url).href;
 ---
 
 <li
@@ -58,13 +58,18 @@ const source_url = new URL(source, Astro.url).href;
       <Eye class="h-[1.2rem] w-[1.2rem]" />
       <span class="text-sm md:text-base">Preview</span>
     </a>
-    <a
-      href={source_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center space-x-2 px-2 py-1 border rounded-lg dark:border-zinc-700/60 dark:hover:bg-zinc-700/25 hover:bg-zinc-200/30 transition-all">
-      <Github class="h-[1.2rem] w-[1.2rem]" />
-      <span class="text-sm md:text-base">Source Code</span>
-    </a>
+
+    {
+      source && (
+        <a
+          href={source_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center space-x-2 px-2 py-1 border rounded-lg dark:border-zinc-700/60 dark:hover:bg-zinc-700/25 hover:bg-zinc-200/30 transition-all">
+          <Github class="h-[1.2rem] w-[1.2rem]" />
+          <span class="text-sm md:text-base">Source Code</span>
+        </a>
+      )
+    }
   </div>
 </li>

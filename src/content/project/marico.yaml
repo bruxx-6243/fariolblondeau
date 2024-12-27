@@ -1,5 +1,6 @@
 cover: "./marico.png"
 title: "Marico"
+trash: true
 description: "Marico is a platform that allows users to build an online audience and promote their content by increasing their visibility. This project uses yup to validate registration and login forms. It also utilizes react-router-dom to facilitate navigation between pages and protect routes for non-connected users."
 stack:
   - "React"
@@ -8,3 +9,4 @@ stack:
   - "Tailwind"
 demo: "https://marico-brx.vercel.app/"
 source: "https://github.com/bruxx-6243/marico"
+date: "2021-01-22"

@@ -1,0 +1,12 @@
+cover: "./maouenepay-web.png"
+title: "MaouenePay Web"
+description: "Maouene Pay is a leading payment gateway that allows you to send and receive money internationally with ease."
+stack:
+  - "NextJs"
+  - "Zod"
+  - "WordPress"
+  - "Server Actions"
+  - "Google Sheet"
+  - "Mailchimp"
+demo: "https://www.fariolblondeau.dev/"
+date: "2024-10-10"

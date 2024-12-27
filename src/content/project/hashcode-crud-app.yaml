@@ -1,5 +1,4 @@
 cover: "./hashcode-crud-app.png"
-processing: true
 title: "HashCode CRUD App"
 description: "HashCode is a CRUD app that allows users to create, read, update, delete tasks and toggle completed status. This project is build on top of NextJS v14, Tailwind and Framer Motion, the project is still in development"
 stack:
@@ -11,3 +10,4 @@ stack:
   - "Supabase"
 demo: "https://brx-hashcode-crud-app.netlify.app/"
 source: "https://github.com/bruxx-6243/crud-app"
+date: "2024-01-22"

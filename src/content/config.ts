@@ -16,7 +16,8 @@ export const collections = {
         }),
         stack: z.array(z.string()),
         demo: z.string().url(),
-        source: z.string().url(),
+        source: z.string().url().optional(),
+        date: z.string().date(),
       }),
   }),
 };

@@ -10,13 +10,7 @@ type ProjectProps = CollectionEntry<"project">;
 const projects: ProjectProps[] = (
   await getCollection("project", ({ data }) => !data.trash)
 ).sort((a, b) => {
-  if (a.data.processing === true && b.data.processing !== true) {
-    return -1;
-  } else if (a.data.processing !== true && b.data.processing === true) {
-    return 1;
-  } else {
-    return 0;
-  }
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
 });
 
 const TITLE = `Projects - ${Author.name}`;
@@ -31,9 +25,9 @@ const TITLE = `Projects - ${Author.name}`;
         </h1>
         <p>
           I create dynamic web apps using React, Tailwind, Astro, Next.js, and
-          Drizzle ORM. My completed projects highlight seamless UIs and optimized
-          experiences, showcasing expertise in React and Next.js for top-notch
-          performance.
+          Drizzle ORM. My completed projects highlight seamless UIs and
+          optimized experiences, showcasing expertise in React and Next.js for
+          top-notch performance.
         </p>
         <p>
           Currently, I'm developing innovative projects using React, Tailwind,
