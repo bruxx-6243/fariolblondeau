@@ -1,3 +1,19 @@
 ---
+import VisitEmailTemplate from "@/components/emails/template";
+import { sendEmail } from "@/services/email.serice";
+import { render } from "@react-email/components";
+
+const html = await render(
+  VisitEmailTemplate({ ip_adress: Astro.clientAddress })
+);
+
+const payload = {
+  recipient: "fariol@akieni.tech",
+  subject: "Learning Progress 🚀",
+  html,
+};
+
+await sendEmail(payload);
+
 return Astro.redirect("https://frontendmasters.com/u/bruxx_6243/");
 ---
