@@ -11,7 +11,6 @@ import {
 } from "@react-email/components";
 
 import { Author } from "@/data/constants";
-import HashCodeImage from "@/content/images/hashcode-logo2.png";
 
 type VisitEmailTemplateProps = {
   ip_adress: string;
