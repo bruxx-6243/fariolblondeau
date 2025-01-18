@@ -7,6 +7,7 @@ import {
   Nodedotjs,
   Zod,
   Adonisjs,
+  Docker,
 } from "simple-icons-astro";
 
 type Technology = {
@@ -39,10 +40,10 @@ export const technologies: Technology[] = [
     text: "Zod",
     icon: Zod,
   },
-  // {
-  //   text: "Drizzle",
-  //   icon: Drizzle,
-  // },
+  {
+    text: "Docker",
+    icon: Docker,
+  },
   {
     text: "Adonis.Js",
     icon: Adonisjs,
