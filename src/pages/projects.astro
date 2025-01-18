@@ -22,7 +22,7 @@ const TITLE = `Projects - ${Author.name}`;
       <div class="space-y-6 max-w-6xl">
         <h1     
           data-title="Projects"
-          aria-label="Projects Porfolio" class="text-3xl font-semibold">
+          aria-label="Projects Portfolio" class="text-3xl font-semibold">
           Welcome <br class="block sm:hidden" /> to My Portfolio 🤩
         </h1>
         <p>
@@ -49,7 +49,7 @@ const TITLE = `Projects - ${Author.name}`;
       </div>
 
       <div class="space-y-2 mt-8">
-        <p class="italic max-w-2xl">
+        <p class="italic max-w-2xl" aria-label="fariol blondeau interests">
           ✅ If my projects caught your interest ❤️‍🔥, let's connect! Reach out to
           me on various social networks, I'm available on :
         </p>
@@ -72,8 +72,7 @@ const TITLE = `Projects - ${Author.name}`;
       </div>
 
       <ul class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8">
-        {
-          projects.map((project: ProjectProps) => {
+        {projects.map((project: ProjectProps) => {
             return <ProjectCard project={project} />;
           })
         }
